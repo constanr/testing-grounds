@@ -56,13 +56,17 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	FVector GunOffset;
 
-	/** Projectile class to spawn */
-	UPROPERTY(EditDefaultsOnly, Category=Projectile)
-	TSubclassOf<class ABallProjectile> ProjectileClass;
+	/** Gun muzzle's offset from the characters location */
+	UPROPERTY(EditDefaultsOnly, Category = Gameplay)
+	TSubclassOf<class AGun> GunBlueprint;
 
 	/** Whether to use motion controller location for aiming. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	uint32 bUsingMotionControllers : 1;
+
+private:
+
+	AGun* Gun;
 
 protected:
 
